@@ -1,0 +1,74 @@
+body{
+  font-family: "Arial", Helvetica, sans-serif;
+  font-size: 40px;
+  font-weight: 900;
+}
+
+.container {
+  display: flex;
+  width: 55%;
+  height: 500px;
+  margin: auto;
+  justify-content: center;
+}
+
+.column {
+  padding: 20% 1.5%;
+  border: 2px solid black;
+  width: 20%;
+  text-align: center;
+}
+
+
+/* Sets style and sets up the animation for column 1 */
+#one {
+  background-color: blue;
+  color: white;
+  animation-name: col1;
+  animation-duration: 2s; /* lasts 2 seconds each time */
+  animation-iteration-count: infinite; /*runs infinitely */
+  animation-direction: alternate; /* reverses the animation cycle after it ends*/
+}
+
+/* performs the animation for column 1 */
+@keyframes col1 {
+  from{background-color: blue; color: white;}
+  to{background-color: yellow; color: black;}
+}
+
+/* sets up the animation for the column 2 text */
+#col2Text {
+  animation-name: col2;
+  animation-duration: 3s; /* lasts 3 seconds each time */
+  animation-iteration-count: infinite; /*runs infinitely */
+}
+
+/* performs the animation for the column 2 text */
+@keyframes col2 {
+  from{transform: rotate(0deg);}
+  to{transform: rotate(360deg);}
+}
+
+/* Sets style for column 3 */
+#three {
+  background-color: blue;
+  color: white;
+}
+
+/* Sets style and sets up the animation for column 3 text */
+#col3Text {
+  position: relative;
+  top: -110%;
+  animation-name: col3;
+  animation-duration: 4s; /* lasts 4 seconds each time */
+  animation-iteration-count: infinite; /*runs infinitely */
+  animation-fill-mode: forwards; /* retains style set by last keyframe */
+}
+
+/* performs the animation for the column 3 text by using multiple steps (begins on 0% and ends on 100%)*/
+@keyframes col3 {
+  0%    {top: -110%; color: white;}
+  33%   {top: 0%; color: black;}
+  66%   {top: 110%; color: white;}
+  100%   {top: -110%; color: black;}
+}
